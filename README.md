@@ -18,3 +18,7 @@ Host-specific config can be added as two files:
 Some [ack][] filetypes for web preprocessors and ruby development.
 
 [ack]: http://beyondgrep.com/
+
+# Git
+
+Personality, config, colors, ignores.

@@ -1,0 +1,12 @@
+*~
+.DS_Store
+*.pyc
+tags
+.bundle
+vendor/*
+!vendor/assets
+.*.sw?
+# open office locks
+.~lock*
+.ruby_version
+.ruby-version
