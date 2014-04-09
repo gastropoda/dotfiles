@@ -22,3 +22,9 @@ Some [ack][] filetypes for web preprocessors and ruby development.
 ## Git
 
 Personality, config, colors, ignores.
+
+## dynamic colors
+
+xterm color scheme support based on https://github.com/sos4nt/dynamic-colors
+
+Also used by my vim dotfiles.
