@@ -158,6 +158,7 @@ fi
 
 have_exe gnome-open && alias open='gnome-open > /dev/null 2>&1'
 have_exe ack-grep && alias ack='ack-grep'
+have_exe homesick && alias hs=homesick
 # }}}
 
 # less {{{
