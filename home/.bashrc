@@ -204,6 +204,10 @@ if [ "$COLORTERM" == "gnome-terminal" ] ; then
 fi
 # }}}
 
+if [ "$TERM" == "xterm-256color" ] ; then
+  have_exe dynamic-colors && dynamic-colors s
+fi
+
 # command prompt {{{
 if [ -n "$PS1" ] ; then
   function pretty_seconds
