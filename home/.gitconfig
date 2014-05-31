@@ -32,5 +32,7 @@
 [branch]
 	autosetuprebase = always
 [push]
-	default = matching
+	default = current
 # vim:filetype=gitconfig
+[github]
+	user = artm

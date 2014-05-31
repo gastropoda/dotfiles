@@ -39,29 +39,6 @@ function find_file
   return 1
 }
 
-# leave only existing directories
-# Usage:
-#
-#   filer_dirs DIR1 DIR2 ...
-#
-# prints a single line with colon separated list of existing directories to stdout
-#
-function filter_dirs
-{
-  local LIST=""
-  while [ -n "$1" ] ; do
-    if [ -d "$1" ] ; then
-      if [ -z "$LIST" ] ; then
-        LIST="$1"
-      else
-        LIST="$LIST:$1"
-      fi
-    fi
-    shift
-  done
-  echo $LIST
-}
-
 # Extend dirlist list stored in given variable by existing directories from the
 # rest of the arguments.
 # Usage:
@@ -80,21 +57,26 @@ function extend_dir_list
   fi
   local VAR=$1
   shift
-  local EXT="$(filter_dirs "$@")"
-  if [ -n "$EXT" ] ; then
-    if [ -z "${!VAR}" ] ; then
-      eval "$VAR=\"$EXT\""
-    else
-      case $mode in
-        prepend)
-          eval "$VAR=\"$EXT:\$$VAR\""
-          ;;
-        append)
-          eval "$VAR=\"\$$VAR:$EXT\""
-          ;;
-      esac
+  eval "local LIST=\"\$$VAR\""
+  while [[ $# -gt 0 ]] ; do
+    dir="$1"
+    shift
+    if [ -d "$dir" ] && [[ :$LIST: != *:"$dir":* ]] ; then
+      if [ -z "$LIST" ] ; then
+        LIST="$dir"
+      else
+        case $mode in
+          prepend)
+            LIST="$dir:$LIST"
+            ;;
+          append)
+            LIST="$LIST:$dir"
+            ;;
+        esac
+      fi
     fi
-  fi
+  done
+  eval "$VAR=\"$LIST\""
   export $VAR
 }
 
@@ -195,6 +177,7 @@ export RI="--format ansi"
 export CUCUMBER_COLORS="comment=magenta,bold:tag=magenta"
 export RUBYOPT=rubygems
 alias b="bundle exec"
+extend_dir_list PATH ~/.rbenv/bin
 have_exe rbenv && eval "$(rbenv init -)"
 # }}}
 
@@ -317,6 +300,3 @@ if [ -z "$TMUX" ]; then
     fi
 fi
 # }}}
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
