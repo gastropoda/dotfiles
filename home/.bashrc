@@ -141,6 +141,8 @@ fi
 have_exe gnome-open && alias open='gnome-open > /dev/null 2>&1'
 have_exe ack-grep && alias ack='ack-grep'
 have_exe homesick && alias hs=homesick
+
+have_exe tree && alias tree="tree -CDt"
 # }}}
 
 # less {{{
@@ -159,6 +161,7 @@ extend_dir_list PATH ~/bin
 extend_dir_list PATH ~/.cabal/bin
 # python modules installed with ./setup.py install --user
 extend_dir_list PATH ~/.local/bin
+PATH=./bin:$PATH
 # }}}
 
 # locale {{{
@@ -259,7 +262,7 @@ if [ -n "$PS1" -a -z "$TMUX" ] ; then
   if have_exe tmux ; then
     if ! have_exe pgrep || pgrep tmux > /dev/null ; then
       echo "tmux sessions:"
-      tmux list-sessions
+      tmux list-sessions | awk '{sub(/:$/,"",$1); print "tmux a -t", $1}'
     fi
   fi
 fi
