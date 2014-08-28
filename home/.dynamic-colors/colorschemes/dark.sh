@@ -1,6 +1,6 @@
 # artm-dark
 
-background="#1F1F1F"
+background="#000000"
 foreground="#D0D0D0"
 cursor="#000000"
 mouse_background="#696567"
@@ -8,7 +8,7 @@ mouse_foreground="#FFEE68"
 highlight="$mouse_background"
 border="$background"
 
-color0="#101010" # black
+color0="#000000" # black
 color8="#303030" # brblack
 
 color1="#ff6565" # red
