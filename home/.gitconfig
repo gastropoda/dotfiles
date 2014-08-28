@@ -36,3 +36,8 @@
 # vim:filetype=gitconfig
 [github]
 	user = artm
+[format]
+	pretty = oneline
+[log]
+	abbrevCommit = true
+	decorate = true
