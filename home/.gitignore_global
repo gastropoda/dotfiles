@@ -10,3 +10,4 @@ vendor/*
 .~lock*
 .ruby_version
 .ruby-version
+.vimrc
