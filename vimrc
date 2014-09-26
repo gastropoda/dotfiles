@@ -56,7 +56,11 @@ set mouse=a
 set backupdir=~/.vim/backup directory=~/.vim/backup backupcopy=yes
 behave xterm " traditional visual mode
 set cursorline cursorcolumn
-set clipboard=unnamedplus
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
 set diffopt=filler,vertical
 set list
 set listchars=tab:›\ ,eol:¬,trail:·
