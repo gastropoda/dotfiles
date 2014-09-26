@@ -1,2 +1,3 @@
 SYMLINK_DIRS="vim bundle dynamic-colors"
+EXCLUDES="README.md"
 # :vim:ft sh:
