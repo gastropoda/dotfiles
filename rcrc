@@ -1,3 +1,4 @@
-SYMLINK_DIRS="vim bundle dynamic-colors"
+DOTFILES_DIRS="$HOME/dotfiles"
+SYMLINK_DIRS="vim"
 EXCLUDES="README.md"
 # :vim:ft sh:
