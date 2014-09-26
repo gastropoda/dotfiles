@@ -1,4 +1,3 @@
-filetype plugin indent on
 set nocompatible
 set backspace=indent,eol,start " sane backspacing
 set hidden " don't complain when hiding modified buffers
@@ -30,3 +29,5 @@ set diffopt=filler,vertical
 set list
 set listchars=tab:›\ ,eol:¬,trail:·
 set viewoptions=folds
+let mapleader = " "
+filetype plugin indent on

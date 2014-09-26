@@ -1,7 +1,3 @@
-" Show whitespace
-set list
-set listchars=tab:›\ ,eol:¬,trail:·
-
 " Simpler gui...
 set guioptions-=T
 set guioptions-=r
