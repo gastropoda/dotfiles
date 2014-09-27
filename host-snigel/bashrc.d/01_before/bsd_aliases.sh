@@ -1,0 +1,1 @@
+LS_COLOR_FLAG=-G
