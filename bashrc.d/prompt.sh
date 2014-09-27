@@ -40,7 +40,7 @@ if [ -n "$PS1" ] ; then
 
   # choose short or long prompt depending on whether user has issued a command
   SHORT_PS1="$ "
-  LONG_PS1="\n$(ansi $green)\u$(ansi)@$(ansi $magenta)\h$(ansi):$(ansi $blue)\w$(ansi)"
+  LONG_PS1="\n$(ansi $green)\u$(ansi)@$(ansi $magenta)\H$(ansi):$(ansi $blue)\w$(ansi)"
   GIT_PS1_SHOWDIRTYSTATE=1
   GIT_PS1_SHOWSTASHSTATE=1
   GIT_PS1_SHOWUNTRACKEDFILES=1
