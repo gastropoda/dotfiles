@@ -50,14 +50,14 @@ if [ -n "$PS1" ] ; then
   {
     rt_stop
     if [ "$last_command" != "after_command" ] ; then
-      if [ `type -t __git_ps1` == 'function' ] ; then
+      if [ "`type -t __git_ps1`" == "function" ] ; then
         GIT_PS1_SHOWUPSTREAM="verbose name"
         __git_ps1 "$LONG_PS1" "\n$SHORT_PS1" " | %s"
       else
         export PS1="$LONG_PS1\n$SHORT_PS1"
       fi
     else
-      if [ `type -t __git_ps1` == 'function' ] ; then
+      if [ "`type -t __git_ps1`" == "function" ] ; then
         GIT_PS1_SHOWUPSTREAM="verbose"
         __git_ps1 "" "$SHORT_PS1" "%s\n"
       else
