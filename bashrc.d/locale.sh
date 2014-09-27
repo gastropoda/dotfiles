@@ -1,9 +1,9 @@
-if locale -a | grep ^en_US.UTF-8 ; then
+if locale -a | grep ^en_US.UTF-8 > /dev/null ; then
   # software messages in American
   export LANG="en_US.UTF-8"
 fi
 
-if locale -a | grep ^en_GB.UTF-8 ; then
+if locale -a | grep ^en_GB.UTF-8 > /dev/null ; then
   # start week on Monday
   export LC_TIME="en_GB.UTF-8"
   # A4 in stead of Letter
