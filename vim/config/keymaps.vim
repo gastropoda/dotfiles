@@ -9,3 +9,4 @@ nmap <C-w>] :tabn<CR>
 " focus folding on current line
 nmap zf zMzv
 nmap <Leader><Leader> :e#<CR>
+nmap # :silent! set relativenumber!<CR>

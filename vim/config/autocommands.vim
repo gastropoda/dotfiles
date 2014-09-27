@@ -25,5 +25,7 @@ augroup artm
   au BufWinEnter * silent! loadview
   au BufWinEnter *.md call s:NoColorOnLargeFiles()
   au VimEnter * call s:NerdTreeUnlessArgs()
+  au InsertEnter * silent! :set norelativenumber
+  au InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 augroup END
 
