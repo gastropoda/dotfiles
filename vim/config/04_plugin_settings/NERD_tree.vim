@@ -11,6 +11,7 @@ endfunction
 
 command! NERDTreeFindOrHide if s:NERDTreeVisible() | NERDTreeClose | else | NERDTreeFind | endif
 
-let g:NERDTreeMapOpenSplit='h'
-let g:NERDTreeMapOpenVSplit='v'
+let g:NERDTreeMapOpenSplit='<C-h>'
+let g:NERDTreeMapOpenVSplit='<C-v>'
+let g:NERDTreeMapOpenInTab='<C-t>'
 map <Leader>n :NERDTreeFindOrHide<CR>
