@@ -5,6 +5,7 @@ alias lla="ls -lA"
 alias df="df -h"
 alias du="du -h"
 alias grep="grep --color=auto"
+alias -- -="cd -"
 if have_exe vim ; then
   alias vi=vim
   export EDITOR=vim
