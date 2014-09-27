@@ -40,14 +40,22 @@ if [ -n "$PS1" ] ; then
 
   # choose short or long prompt depending on whether user has issued a command
   SHORT_PS1="$ "
-  LONG_PS1="
-$(ansi $green)\u$(ansi)@$(ansi $magenta)\h$(ansi):$(ansi $blue)\w$(ansi)
-\$ "
+  LONG_PS1="\n$(ansi $green)\u$(ansi)@$(ansi $magenta)\h$(ansi):$(ansi $blue)\w$(ansi)"
+  GIT_PS1_SHOWDIRTYSTATE=1
+  GIT_PS1_SHOWSTASHSTATE=1
+  GIT_PS1_SHOWUNTRACKEDFILES=1
+  GIT_PS1_SHOWUPSTREAM="verbose name"
+  GIT_PS1_DESCRIBE_STYLE=branch
+  GIT_PS1_SHOWCOLORHINTS=1
   function after_command
   {
     rt_stop
     if [ "$last_command" != "after_command" ] ; then
-      export PS1="$LONG_PS1"
+      if [ `type -t __git_ps1` == 'function' ] ; then
+        __git_ps1 "$LONG_PS1" "\n$SHORT_PS1"
+      else
+        export PS1="$LONG_PS1\n$SHORT_PS1"
+      fi
     else
       export PS1="$SHORT_PS1"
     fi
