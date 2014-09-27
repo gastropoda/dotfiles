@@ -1,4 +1,4 @@
 DOTFILES_DIRS="$HOME/dotfiles"
 SYMLINK_DIRS="vim"
 EXCLUDES="README.md"
-# :vim:ft sh:
+# vim:ft=sh

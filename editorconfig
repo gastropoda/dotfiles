@@ -33,4 +33,4 @@ brace_style = end-expand
 preserve_newlines = true
 max_preserve_newlines = 2
 
-; vim:ft=cfg:
+; vim:ft=dosini
