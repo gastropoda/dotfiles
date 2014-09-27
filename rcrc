@@ -1,4 +1,7 @@
 DOTFILES_DIRS="$HOME/dotfiles"
 SYMLINK_DIRS="vim"
 EXCLUDES="README.md"
+if [ "$(uname)" = "Darwin" ] ; then
+  TAGS="mac"
+fi
 # vim:ft=sh

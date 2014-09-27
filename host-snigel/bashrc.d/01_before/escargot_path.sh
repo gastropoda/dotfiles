@@ -1,11 +1,3 @@
-# Brew...
-extend_dir_list PATH /usr/local/sbin
 extend_dir_list PATH /Applications/calibre.app/Contents/MacOS
-
-extend_dir_list PYTHONPATH \
-  /usr/local/lib/python2.6/site-packages \
-  /usr/local/lib/python2.6/site-packages/gtk-2.0
-
 extend_dir_list CMAKE_PREFIX_PATH $HOME/QtSDK/Desktop/Qt/473/gcc
 extend_dir_list CMAKE_PREFIX_PATH $HOME/QtSDK/Desktop/Qt/4.8.1/gcc
-
