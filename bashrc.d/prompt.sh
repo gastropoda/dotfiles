@@ -44,7 +44,6 @@ if [ -n "$PS1" ] ; then
   GIT_PS1_SHOWDIRTYSTATE=1
   GIT_PS1_SHOWSTASHSTATE=1
   GIT_PS1_SHOWUNTRACKEDFILES=1
-  GIT_PS1_SHOWUPSTREAM="verbose name"
   GIT_PS1_DESCRIBE_STYLE=branch
   GIT_PS1_SHOWCOLORHINTS=1
   function after_command
@@ -52,12 +51,18 @@ if [ -n "$PS1" ] ; then
     rt_stop
     if [ "$last_command" != "after_command" ] ; then
       if [ `type -t __git_ps1` == 'function' ] ; then
-        __git_ps1 "$LONG_PS1" "\n$SHORT_PS1"
+        GIT_PS1_SHOWUPSTREAM="verbose name"
+        __git_ps1 "$LONG_PS1" "\n$SHORT_PS1" " | %s"
       else
         export PS1="$LONG_PS1\n$SHORT_PS1"
       fi
     else
-      export PS1="$SHORT_PS1"
+      if [ `type -t __git_ps1` == 'function' ] ; then
+        GIT_PS1_SHOWUPSTREAM="verbose"
+        __git_ps1 "" "$SHORT_PS1" "%s\n"
+      else
+        export PS1="$SHORT_PS1"
+      fi
     fi
   }
   PROMPT_COMMAND=after_command
