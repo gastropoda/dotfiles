@@ -20,7 +20,7 @@ augroup artm
   au!
   " Recall last location in file
   au BufReadPost * call s:RecallLastPosition()
-  au BufReadPost COMMIT_EDITMSG norm ggi
+  au BufReadPost COMMIT_EDITMSG norm gg$
   au BufWinLeave * silent! mkview
   au BufWinEnter * silent! loadview
   au BufWinEnter *.md call s:NoColorOnLargeFiles()
