@@ -38,9 +38,12 @@ if [ -n "$PS1" ] ; then
   }
   trap before_command DEBUG
 
+  PS1_USER="$(ansi $green)\u$(ansi)"
+  PS1_HOST="$(ansi $magenta)\H$(ansi)"
+  PS1_CWD="$(ansi $blue)\w$(ansi)"
   # choose short or long prompt depending on whether user has issued a command
   SHORT_PS1="$ "
-  LONG_PS1="\n$(ansi $green)\u$(ansi)@$(ansi $magenta)\H$(ansi):$(ansi $blue)\w$(ansi)$PS1_TAG"
+  LONG_PS1="\n$PS1_USER@$PS1_HOST:$PS1_CWD$PS1_TAG"
   GIT_PS1_SHOWDIRTYSTATE=1
   GIT_PS1_SHOWSTASHSTATE=1
   GIT_PS1_SHOWUNTRACKEDFILES=1
