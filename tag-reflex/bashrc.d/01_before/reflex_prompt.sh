@@ -1,13 +1,16 @@
-function resolve_ip() {
-  dig "$1" @resolver1.opendns.com +short
+. /engineyard/bin/env.sh
+
+EY_ENVIRONMENT_SUFFIX=${EY_ENVIRONMENT_NAME/*_}
+
+function resolve_cname() {
+  dig "$1" @resolver1.opendns.com CNAME +short
 }
 
-THIS_IP="$(resolve_ip myip.opendns.com)"
-
 for env in production testing fragile ; do
-  url="${env}.dpireflex.com"
-  env_ip="$(resolve_ip $url)"
-  if [ "$THIS_IP" == "$env_ip" ] ; then
+  env_host="${env}.dpireflex.com"
+  env_cname=$(resolve_cname $env_host)
+  env_short=${env_cname/.*}
+  if [ "$EY_ENVIRONMENT_SUFFIX" == "$env_short" ] ; then
     REFLEX_ENV="$env"
   fi
 done
@@ -16,14 +19,11 @@ case $REFLEX_ENV in
   production)
     color=$bright_red
     ;;
-  testing)
-    color=$bright_blue
-    ;;
-  fragile)
+  testing|fragile)
     color=$bright_green
     ;;
 esac
 
-PS1_TAG=" [$(ansi $color)${REFLEX_ENV}$(ansi)]"
-export PS1_TAG
+PS1_HOST="$(ansi $magenta)$HOSTNAME$(ansi).$(ansi $bright_cyan)$EY_ENVIRONMENT_NAME$(ansi)($(ansi $color)${REFLEX_ENV}$(ansi))"
+export PS1_HOST
 export REFLEX_ENV
