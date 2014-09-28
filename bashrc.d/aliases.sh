@@ -9,6 +9,7 @@ alias -- -="cd -"
 if have_exe vim ; then
   alias vi=vim
   export EDITOR=vim
+  alias vig="vim .git/index"
 fi
 have_exe gnome-open && alias open='gnome-open > /dev/null 2>&1'
 have_exe ack-grep && alias ack='ack-grep'
