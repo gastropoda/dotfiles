@@ -17,3 +17,4 @@ have_exe tree && alias tree="tree -CDt"
 
 alias gc="git checkout"
 alias gcb="git checkout -b"
+alias gst="git status"
