@@ -1,3 +1,6 @@
+extend_dir_list PATH ~/.rbenv/bin
+have_exe rbenv && eval "$(rbenv init -)"
+
 extend_dir_list PATH ~/bin
 # cabal/haskell (for pandoc)
 extend_dir_list PATH ~/.cabal/bin
