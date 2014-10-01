@@ -68,7 +68,7 @@ if [ -n "$PS1" ] ; then
       fi
     fi
   }
-  PROMPT_COMMAND=after_command
+  export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} after_command"
 
   export PS1="$LONG_PS1"
 fi
