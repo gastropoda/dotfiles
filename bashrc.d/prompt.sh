@@ -21,7 +21,7 @@ if [ -n "$PS1" ] ; then
   {
     [ -n "$rt_start_time" ] || return
     rt_elapsed=$(($SECONDS - $rt_start_time))
-    if [ $rt_elapsed != '0' ] && [ $last_command != "after_command" ] ; then
+    if [ $rt_elapsed != '0' ] && [ "$last_command" != "after_command" ] ; then
       echo
       echo "     Command: $last_command"
       echo "Elapsed time: $(pretty_seconds $rt_elapsed)"
