@@ -1,4 +1,4 @@
-if [ -n "$PS1" ] ; then
+if [ -n "$PS1" ]  ; then
   function pretty_seconds
   {
     sec=$(($1 % 60))
@@ -74,7 +74,9 @@ if [ -n "$PS1" ] ; then
       fi
     fi
   }
-  export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} after_command"
+  if [[ "$PROMPT_COMMAND" != *after_command* ]] ; then
+    export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} after_command"
+  fi
 
   export PS1="$LONG_PS1"
 fi
