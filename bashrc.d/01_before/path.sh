@@ -1,4 +1,6 @@
 extend_dir_list PATH ~/.rbenv/bin
+# without this (at least) rbenv will get confused
+PATH=${PATH//.\/bin:}
 have_exe rbenv && eval "$(rbenv init -)"
 
 extend_dir_list PATH ~/bin
