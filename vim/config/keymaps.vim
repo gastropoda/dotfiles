@@ -18,4 +18,4 @@ nmap <C-w>\| :vert split<CR>
 nmap zf zMzv
 nmap <Leader><Leader> :e#<CR>
 nmap # :silent! set relativenumber!<CR>
-
+nmap <Leader>t :tab new<CR>
