@@ -34,7 +34,7 @@ if [ -n "$PS1" ]  ; then
   {
     rt_start
     case $BASH_COMMAND in
-      autojump_add_to_database)
+      autojump_add_to_database|"history -a")
         ;;
       *)
         last_command=$this_command
