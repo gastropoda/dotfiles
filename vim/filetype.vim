@@ -8,6 +8,7 @@ augroup filetypedetect
   au BufRead,BufNewFile */nginx/conf/*,nginx*.conf set ft=nginx
   au BufRead,BufNewFile *.tex setf tex
   au BufNewFile,BufRead *.slim set syntax=slim | setf slim
+  au BufNewFile,BufRead ~/.ssh/config.d/*,~/dotfiles/**/ssh/config.d/* setf sshconfig
 augroup END
 
 let g:tex_flavor = "latex"
