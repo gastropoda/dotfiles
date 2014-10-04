@@ -4,4 +4,9 @@ EXCLUDES="README.md"
 if [ "$(uname)" = "Darwin" ] ; then
   TAGS="mac"
 fi
+
+d=~/.rcrc.d
+[[ -d $d ]] && for script in $d/* ; do
+  source $script
+done
 # vim:ft=sh
