@@ -23,3 +23,5 @@ if [ "$(type -t __git_complete)" == "function" ] ; then
 fi
 
 alias b="bundle exec"
+
+have_exe autossh && alias ssh="autossh -M 0"
