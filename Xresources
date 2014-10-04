@@ -2,4 +2,4 @@
 *xterm*faceSize: 7
 *xterm*termName: xterm-256color
 *xterm*dynamicColors: true
-
+*xterm*metaSendsEscape: true
