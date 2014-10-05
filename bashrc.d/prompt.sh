@@ -74,9 +74,7 @@ if [ -n "$PS1" ]  ; then
       fi
     fi
   }
-  if [[ "$PROMPT_COMMAND" != *after_command* ]] ; then
-    export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} after_command"
-  fi
+  stringlist_append PROMPT_COMMAND after_command
 
   export PS1="$LONG_PS1"
 fi
