@@ -5,5 +5,5 @@ stringlist_append() {
   stringlist="${stringlist/; $appendage/}"
   stringlist="${stringlist/$appendage/}"
   stringlist="${stringlist:+$stringlist ;} $appendage"
-  typeset $1="$stringlist"
+  eval "$1='$stringlist'"
 }
