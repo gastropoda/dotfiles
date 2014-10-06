@@ -33,14 +33,10 @@ if [ -n "$PS1" ]  ; then
   function before_command
   {
     rt_start
-    case $BASH_COMMAND in
-      autojump_add_to_database|"history -a")
-        ;;
-      *)
-        last_command=$this_command
-        this_command=$BASH_COMMAND
-        ;;
-    esac
+    if [ "$IN_PROMPT_COMMAND" != "1" ] ; then
+      last_command=$this_command
+      this_command=$BASH_COMMAND
+    fi
   }
   trap before_command DEBUG
 
@@ -73,8 +69,16 @@ if [ -n "$PS1" ]  ; then
         export PS1="$SHORT_PS1"
       fi
     fi
+    IN_PROMPT_COMMAND=0
+  }
+
+  function prompt_command_begins
+  {
+    IN_PROMPT_COMMAND=1
   }
   stringlist_append PROMPT_COMMAND after_command
+  stringlist_prepend PROMPT_COMMAND prompt_command_begins
+  export IN_PROMPT_COMMAND=0
 
   export PS1="$LONG_PS1"
 fi
