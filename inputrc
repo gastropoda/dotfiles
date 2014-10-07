@@ -5,14 +5,6 @@ set mark-directories on
 set bell-style visible
 set show-all-if-ambiguous on
 
-set editing-mode vi
-
-set keymap vi-command
-"\e[5~": history-search-backward
-"\e[6~": history-search-forward
-"\C-L": clear-screen
-
-set keymap vi-insert
 "\e[5~": history-search-backward
 "\e[6~": history-search-forward
 "\C-L": clear-screen
