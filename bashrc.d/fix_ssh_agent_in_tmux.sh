@@ -10,18 +10,21 @@ if [ -z "$TMUX" ]; then
 
         # if ssh auth variable is missing
         if [ -z "$SSH_AUTH_SOCK" ]; then
-            export SSH_AUTH_SOCK="$HOME/.ssh/.auth_socket"
+            export SSH_AUTH_SOCK="~/.ssh/.auth_socket"
         fi
 
         # if socket is available create the new auth session
         if [ ! -S "$SSH_AUTH_SOCK" ]; then
             `ssh-agent -a $SSH_AUTH_SOCK` > /dev/null 2>&1
-            echo $SSH_AGENT_PID > $HOME/.ssh/.auth_pid
+            echo $SSH_AGENT_PID > ~/.ssh/.auth_pid
         fi
 
         # if agent isn't defined, recreate it from pid file
-        if [ -z $SSH_AGENT_PID ]; then
-            export SSH_AGENT_PID=`cat $HOME/.ssh/.auth_pid`
+        if [ -z "$SSH_AGENT_PID" ] ; then
+          if [ ! -f ~/.ssh/.auth_pid ] ; then
+            echo ${SSH_AUTH_SOCK/*.} > ~/.ssh/.auth_pid
+          fi
+          export SSH_AGENT_PID=`cat ~/.ssh/.auth_pid`
         fi
 
         # Add all default keys to ssh auth
