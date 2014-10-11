@@ -18,8 +18,10 @@ have_exe tree && alias tree="tree -CDt"
 alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gst="git status"
+alias glog="git log"
 if [ "$(type -t __git_complete)" == "function" ] ; then
   __git_complete gc _git_checkout
+  __git_complete glog _git_log
 fi
 
 alias b="bundle exec"
