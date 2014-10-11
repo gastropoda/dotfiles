@@ -1,7 +1,6 @@
 set nocompatible
 set backspace=indent,eol,start " sane backspacing
 set hidden " don't complain when hiding modified buffers
-set number relativenumber " always linenumbers
 set ts=2 sts=2 sw=2 expandtab " default indentation settings
 set showcmd " Show (partial) command in the status line
 set foldmethod=marker foldlevelstart=99
@@ -31,3 +30,7 @@ set listchars=tab:›\ ,eol:¬,trail:·
 set viewoptions=folds
 let mapleader = " "
 filetype plugin indent on
+set number
+if exists("&relativenumber")
+  set relativenumber
+endif
