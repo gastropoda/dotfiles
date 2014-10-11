@@ -1,5 +1,5 @@
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 let g:neobundle_default_git_protocol='git'
 NeoBundleFetch 'Shougo/neobundle.vim'
 if v:version >= 704 && has('lua')
@@ -21,4 +21,5 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'onemanstartup/vim-slim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'evanmiller/nginx-vim-syntax'
+call neobundle#end()
 NeoBundleCheck
