@@ -4,6 +4,7 @@ PATH=${PATH//.\/bin:}
 have_exe rbenv && eval "$(rbenv init -)"
 
 extend_dir_list PATH ~/bin
+extend_dir_list PATH ~/.bin
 # cabal/haskell (for pandoc)
 extend_dir_list PATH ~/.cabal/bin
 # python modules installed with ./setup.py install --user
