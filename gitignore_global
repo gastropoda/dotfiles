@@ -11,3 +11,4 @@ vendor/*
 .ruby_version
 .ruby-version
 .vimrc
+.agignore
