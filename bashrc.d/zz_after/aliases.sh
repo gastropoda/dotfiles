@@ -27,3 +27,18 @@ fi
 alias b="bundle exec"
 
 have_exe autossh && alias ssh="autossh -M 0"
+
+if have_exe csvlook ; then
+  SSV_OPTS="-d ';' -e Latin-1"
+  alias ssvlook="csvlook $SSV_OPTS"
+  alias ssvclean="csvclean $SSV_OPTS"
+  alias ssvcut="csvcut $SSV_OPTS"
+  alias ssvgrep="csvgrep $SSV_OPTS"
+  alias ssvjoin="csvjoin $SSV_OPTS"
+  alias ssvsort="csvsort $SSV_OPTS"
+  alias ssvstack="csvstack $SSV_OPTS"
+  alias ssvformat="csvformat $SSV_OPTS"
+  alias ssvjson="csvjson $SSV_OPTS"
+  alias ssvsql="csvsql $SSV_OPTS"
+  alias ssvstat="csvstat $SSV_OPTS"
+fi
