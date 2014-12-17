@@ -3,3 +3,5 @@
 *xterm*termName: xterm-256color
 *xterm*dynamicColors: true
 *xterm*metaSendsEscape: true
+*xterm*maximized: true
+*xterm*fullscreen: true
