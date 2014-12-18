@@ -29,6 +29,9 @@ alias b="bundle exec"
 have_exe autossh && alias ssh="autossh -M 0"
 
 if have_exe csvlook ; then
+  function csvless() {
+    csvlook "$@" | less
+  }
   SSV_OPTS="-d ';' -e Latin-1"
   alias ssvlook="csvlook $SSV_OPTS"
   alias ssvclean="csvclean $SSV_OPTS"
@@ -41,4 +44,18 @@ if have_exe csvlook ; then
   alias ssvjson="csvjson $SSV_OPTS"
   alias ssvsql="csvsql $SSV_OPTS"
   alias ssvstat="csvstat $SSV_OPTS"
+  alias ssvless="csvless $SSV_OPTS"
+  TSV_OPTS="-t -e Latin-1"
+  alias tsvlook="csvlook $TSV_OPTS"
+  alias tsvclean="csvclean $TSV_OPTS"
+  alias tsvcut="csvcut $TSV_OPTS"
+  alias tsvgrep="csvgrep $TSV_OPTS"
+  alias tsvjoin="csvjoin $TSV_OPTS"
+  alias tsvsort="csvsort $TSV_OPTS"
+  alias tsvstack="csvstack $TSV_OPTS"
+  alias tsvformat="csvformat $TSV_OPTS"
+  alias tsvjson="csvjson $TSV_OPTS"
+  alias tsvsql="csvsql $TSV_OPTS"
+  alias tsvstat="csvstat $TSV_OPTS"
+  alias tsvless="csvless $TSV_OPTS"
 fi
