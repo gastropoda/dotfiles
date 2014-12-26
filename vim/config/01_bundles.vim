@@ -21,5 +21,6 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'onemanstartup/vim-slim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'evanmiller/nginx-vim-syntax'
+NeoBundle 'alunny/pegjs-vim'
 call neobundle#end()
 NeoBundleCheck
