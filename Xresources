@@ -1,7 +1,8 @@
 *xterm*faceName: Monospace
-*xterm*faceSize: 7
+*xterm*faceSize: 8
 *xterm*termName: xterm-256color
 *xterm*dynamicColors: true
 *xterm*metaSendsEscape: true
-*xterm*maximized: true
-*xterm*fullscreen: true
+*xterm*maximized: false
+*xterm*fullscreen: false
+*xterm*VT100.geometry: 80x60
