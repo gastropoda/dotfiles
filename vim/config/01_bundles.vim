@@ -22,5 +22,6 @@ NeoBundle 'onemanstartup/vim-slim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 NeoBundle 'alunny/pegjs-vim'
+NeoBundle 'kchmck/vim-coffee-script'
 call neobundle#end()
 NeoBundleCheck
