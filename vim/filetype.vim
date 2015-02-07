@@ -7,6 +7,7 @@ augroup filetypedetect
   au BufNewFile,BufRead *.m setf octave
   au BufRead,BufNewFile */nginx/conf/*,nginx*.conf set ft=nginx
   au BufRead,BufNewFile *.tex setf tex
+  au BufRead,BufNewFile *.scss setf scss
   au BufNewFile,BufRead *.slim set syntax=slim | setf slim
   au BufNewFile,BufRead ~/.ssh/config.d/*,~/dotfiles/**/ssh/config.d/* setf sshconfig
 augroup END
