@@ -14,4 +14,5 @@ command! NERDTreeFindOrHide if s:NERDTreeVisible() | NERDTreeClose | else | NERD
 let g:NERDTreeMapOpenSplit='<C-h>'
 let g:NERDTreeMapOpenVSplit='<C-v>'
 let g:NERDTreeMapOpenInTab='<C-t>'
+map <Leader>f :NERDTreeFind<CR>
 map <Leader>n :NERDTreeFindOrHide<CR>
