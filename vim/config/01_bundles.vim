@@ -23,5 +23,6 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 NeoBundle 'alunny/pegjs-vim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'Wolfy87/vim-enmasse'
 call neobundle#end()
 NeoBundleCheck
