@@ -1,0 +1,1 @@
+export COMP_WORDBREAKS="${COMP_WORDBREAKS}[=,"
