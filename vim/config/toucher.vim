@@ -21,8 +21,11 @@ endfunction
 
 function! s:Touch()
   mkview
-  bufdo if s:ShouldTouch() | noautocmd w | endif
-  loadview
+  try
+    bufdo if s:ShouldTouch() | noautocmd w | endif
+  finally
+    loadview
+  endtry
 endfunction
 
 aug Toucher
