@@ -16,14 +16,16 @@ function! s:ShouldTouch()
   let justSaved = index(s:ToucherSeen, path) >= 0
   let visible = bufwinnr("%") > -1
   let wantsIt = exists("b:touchme") && b:touchme
-  return !justSaved && !&modified && visible && wantsIt
+  return filewritable(path) && !justSaved && !&modified && visible && wantsIt
 endfunction
 
 function! s:Touch()
-  mkview
+  let curbuf=bufname("%")
+  mkview 
   try
     bufdo if s:ShouldTouch() | noautocmd w | endif
   finally
+    exec "buffer " . curbuf
     loadview
   endtry
 endfunction
