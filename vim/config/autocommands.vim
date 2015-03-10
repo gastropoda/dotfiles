@@ -5,13 +5,13 @@ function! s:WriteTimeoutSchedule()
     augroup WriteTimeout
       au CursorHold * call s:WriteTimeoutFire()
     augroup END
-    do User WriteTimeoutPre
+    silent do User WriteTimeoutPre
   endif
-  do User WriteTimeoutEach
+  silent do User WriteTimeoutEach
 endfunction
 
 function! s:WriteTimeoutFire()
-  do User WriteTimeoutPost
+  silent do User WriteTimeoutPost
   au! WriteTimeout
   let &ut=s:oldUpdateTime
 endfunction
