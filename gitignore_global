@@ -12,3 +12,4 @@ vendor/*
 .ruby-version
 .vimrc
 .agignore
+Session.vim
