@@ -25,5 +25,6 @@ NeoBundle 'alunny/pegjs-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Wolfy87/vim-enmasse'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'ivalkeen/vim-simpledb'
 call neobundle#end()
 NeoBundleCheck
