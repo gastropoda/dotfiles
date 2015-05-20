@@ -21,7 +21,7 @@ endfunction
 
 function! s:Touch()
   let curbuf=bufname("%")
-  mkview 
+  mkview
   try
     bufdo if s:ShouldTouch() | noautocmd w | endif
   finally
