@@ -34,3 +34,5 @@ set number
 if exists("&relativenumber")
   set relativenumber
 endif
+" don't care about autoswap
+set shortmess+=A
