@@ -1,7 +1,4 @@
 # vim:ft=gitconfig
-[user]
-  name = Artem Baguinski
-  email = abaguinski@depraktijkindex.nl
 [apply]
   ignorewhitespace = change
   whitespace = nowarn
