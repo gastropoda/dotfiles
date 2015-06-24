@@ -14,3 +14,5 @@ let g:ctrlp_prompt_mappings = {
       \ 'AcceptSelection("h")': ['<c-h>'],
       \ 'AcceptSelection("e")': ['<cr>', '<space>'],
       \ }
+
+call ctrlp_bdelete#init()
