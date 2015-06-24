@@ -4,5 +4,5 @@
 *xterm*dynamicColors: true
 *xterm*metaSendsEscape: true
 *xterm*maximized: false
-*xterm*fullscreen: false
-*xterm*VT100.geometry: 80x60
+*xterm*fullscreen: true
+*xterm*VT100.geometry: 120x60
