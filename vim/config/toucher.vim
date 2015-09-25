@@ -11,23 +11,22 @@
 " - it has truthy `b:touchme` variable: this way deciding what needs touching
 "   is decoupled from the touching mechanism
 
-function! s:ShouldTouch()
-  let path=bufname("%")
-  let justSaved = index(s:ToucherSeen, path) >= 0
-  let visible = bufwinnr("%") > -1
-  let wantsIt = exists("b:touchme") && b:touchme
-  return filewritable(path) && !justSaved && !&modified && visible && wantsIt
+function! s:ShouldTouch(bufnr, path)
+  let justSaved = index(s:ToucherSeen, a:path) >= 0
+  return !justSaved && getbufvar(a:bufnr, "touchme") && !getbufvar(a:bufnr, "&modified")
 endfunction
 
 function! s:Touch()
-  let curbuf=bufname("%")
-  mkview
-  try
-    bufdo if s:ShouldTouch() | noautocmd w | endif
-  finally
-    exec "buffer " . curbuf
-    loadview
-  endtry
+  let last_bufnr = bufnr("$")
+  let bufnr = 1
+  while bufnr <= last_bufnr
+    let path = bufname(bufnr)
+    if s:ShouldTouch(bufnr, path)
+      echomsg "Touching " . path
+      exec "!touch '" . path . "'"
+    endif
+    let bufnr = bufnr + 1
+  endwhile
 endfunction
 
 aug Toucher

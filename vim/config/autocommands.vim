@@ -27,9 +27,9 @@ augroup artm
   au InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 
   " support for WriteTimeout
-  "au BufWrite * call s:WriteTimeoutSchedule()
+  au BufWrite * call s:WriteTimeoutSchedule()
 
   " support for toucher
-  "au BufNew,BufRead *_spec.rb let b:touchme=1
+  au BufNewFile,BufRead *_spec.rb let b:touchme=1
 augroup END
 
