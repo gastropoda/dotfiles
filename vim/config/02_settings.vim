@@ -34,3 +34,8 @@ set number
 if exists("&relativenumber")
   set relativenumber
 endif
+if has('arabic')
+  " this makes pasting painful
+  set noarabicshape
+endif
+
