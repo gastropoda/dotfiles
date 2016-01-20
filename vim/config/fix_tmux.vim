@@ -10,4 +10,8 @@ exec "set <PageDown>=\e[6;*~"
 exec "set <xHome>=\e[1;*H"
 exec "set <xEnd>=\e[1;*F"
 " fix dragging inside tmux
-set ttymouse=xterm2
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+end
