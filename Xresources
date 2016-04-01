@@ -1,8 +1,32 @@
-*xterm*faceName: Monospace
-*xterm*faceSize: 8
 *xterm*termName: xterm-256color
 *xterm*dynamicColors: true
 *xterm*metaSendsEscape: true
-*xterm*maximized: false
-*xterm*fullscreen: true
+*xterm*maximized: true
+*xterm*fullscreen: false
 *xterm*VT100.geometry: 120x60
+
+! Default
+*xterm*faceName: Monospace
+*xterm*faceNameDoublesize: Noto Sans Mono CJK KR
+*xterm*faceSize: 8
+! Unreadable
+*xterm*faceSize1: 4
+! Tiny
+*xterm*faceSize2: 6
+! Small
+*xterm*faceSize3: 7
+! Medium
+*xterm*faceSize4: 9
+! Large
+*xterm*faceSize5: 10
+! Huge
+*xterm*faceSize6: 12
+
+! allow bold
+*xterm*colorBDMode: false
+! no underline
+*xterm*colorULMode: true
+! make underline this color
+*xterm*colorUL: rgb:CC/99/00
+
+
