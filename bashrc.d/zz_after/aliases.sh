@@ -10,6 +10,14 @@ function md() {
   mkdir $1 && cd $1
 }
 
+if have_exe docker ; then
+  alias d=docker
+fi
+
+if have_exe docker-compose ; then
+  alias dc=docker-compose
+fi
+
 if have_exe vim ; then
   alias vi=vim
   export EDITOR=vim
