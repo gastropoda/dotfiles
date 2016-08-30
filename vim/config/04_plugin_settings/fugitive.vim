@@ -13,3 +13,5 @@ endfunction
 command! MyGstatus call s:GitStatusEx()
 
 nmap <Leader>g :MyGstatus<CR>
+
+cnorea <expr> git ExpAbbr("git", "Git")
