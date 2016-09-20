@@ -16,6 +16,10 @@ fi
 
 if have_exe docker-compose ; then
   alias dc=docker-compose
+
+  function dctop() {
+    htop -p $(dc ps -q | xargs docker inspect -f {{.State.Pid}} | paste -sd "," -)
+  }
 fi
 
 if have_exe vim ; then
