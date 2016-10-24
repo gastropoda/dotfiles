@@ -1,4 +1,4 @@
 if exists("+omnifunc") && &omnifunc == ""
-  set omnifunc=syntaxcomplete#Complete
+  setl omnifunc=syntaxcomplete#Complete
 endif
 

@@ -1,2 +1,2 @@
-set foldmethod=syntax sts=4 ts=4 sw=4 expandtab
-set cindent cinoptions=g2,(0
+setl foldmethod=syntax sts=4 ts=4 sw=4 expandtab
+setl cindent cinoptions=g2,(0
