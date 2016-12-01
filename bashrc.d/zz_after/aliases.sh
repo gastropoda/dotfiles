@@ -22,6 +22,10 @@ if have_exe docker-compose ; then
   }
 fi
 
+if have_exe docker-machine ; then
+  alias dm=docker-machine
+fi
+
 if have_exe vim ; then
   alias vi=vim
   export EDITOR=vim
