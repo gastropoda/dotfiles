@@ -12,6 +12,7 @@ function md() {
 
 if have_exe docker ; then
   alias d=docker
+  complete -F _docker d
 fi
 
 if have_exe docker-compose ; then
@@ -24,6 +25,7 @@ fi
 
 if have_exe docker-machine ; then
   alias dm=docker-machine
+  complete -F _docker_machine dm
 fi
 
 if have_exe vim ; then
