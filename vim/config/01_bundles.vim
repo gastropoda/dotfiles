@@ -7,13 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" drop it?
-if v:version >= 704 && has('lua')
-  "Plugin 'Shougo/neocomplete.vim'
-else
-  "Plugin 'Shougo/neocomplcache.vim'
-endif
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
@@ -30,4 +23,5 @@ Plugin 'Wolfy87/vim-enmasse'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'ivalkeen/vim-simpledb'
 Plugin 'nicklasos/vim-jsx-riot'
+Plugin 'evanmiller/nginx-vim-syntax'
 call vundle#end()
