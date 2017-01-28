@@ -10,6 +10,7 @@ extend_dir_list PATH ~/.dynamic-colors/bin
 extend_dir_list PATH ~/.cabal/bin
 # python modules installed with ./setup.py install --user
 extend_dir_list PATH ~/.local/bin
+extend_dir_list PATH ~/src/gopath/bin
 
 # make sysadmins hate me
 # this is useful for projects with local binstubs
