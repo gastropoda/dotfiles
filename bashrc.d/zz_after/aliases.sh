@@ -52,7 +52,7 @@ have_exe autossh && alias ssh="autossh -M 0"
 
 if have_exe csvlook ; then
   function csvless() {
-    csvlook "$@" | less
+    csvlook --no-inference "$@" | less
   }
   SSV_OPTS="-d ';' -e Latin-1"
   alias ssvlook="csvlook $SSV_OPTS"
