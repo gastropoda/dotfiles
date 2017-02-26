@@ -9,6 +9,8 @@ if [ -n "$PS1" -a -z "$TMUX" ] ; then
         echo "tmux sessions:"
         echo "$lst" | awk '{sub(/:$/,"",$1); print "tmux a -t", $1}'
       fi
+    else
+      tmux new -s "$(date "+Week %V")"
     fi
   fi
 fi
