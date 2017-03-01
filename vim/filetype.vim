@@ -11,6 +11,7 @@ augroup filetypedetect
   au BufRead,BufNewFile *.scss setf scss
   au BufNewFile,BufRead *.slim set syntax=slim | setf slim
   au BufNewFile,BufRead ~/.ssh/config.d/*,~/dotfiles/**/ssh/config.d/* setf sshconfig
+  au BufNewFile,BufRead /etc/bind/named.conf.* setf named
 augroup END
 
 let g:tex_flavor = "latex"
