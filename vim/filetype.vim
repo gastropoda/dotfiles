@@ -12,6 +12,8 @@ augroup filetypedetect
   au BufNewFile,BufRead *.slim set syntax=slim | setf slim
   au BufNewFile,BufRead ~/.ssh/config.d/*,~/dotfiles/**/ssh/config.d/* setf sshconfig
   au BufNewFile,BufRead /etc/bind/named.conf.* setf named
+  au BufNewFile,BufRead */nginx/* setf nginx
+  au BufNewFile,BufRead */nginx/*.erb setf eruby | let b:eruby_subtype="nginx"
 augroup END
 
 let g:tex_flavor = "latex"
