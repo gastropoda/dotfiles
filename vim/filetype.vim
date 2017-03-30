@@ -3,7 +3,7 @@ augroup filetypedetect
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Capfile,config.ru,Guardfile,*.rake,*.cap} setf ruby
   au BufRead,BufNewFile {SConstruct,SConscript} setf python
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} setf markdown
-  au BufNewFile,BufRead *.json setf javascript
+  au BufNewFile,BufRead *.json,.compilerc,.babelrc setf javascript
   au BufNewFile,BufRead *.es6 setf javascript
   au BufNewFile,BufRead *.m setf octave
   au BufRead,BufNewFile */nginx/conf/*,nginx*.conf set ft=nginx
