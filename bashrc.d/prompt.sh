@@ -40,6 +40,19 @@ if [ -n "$PS1" ]  ; then
   }
   trap before_command DEBUG
 
+  function prepend_docker_prompt
+  {
+    compose="$COMPOSE_FILE"
+    if [ -z "$compose" ] ; then
+      compose="docker-compose.yml"
+      if [ -f "docker-compose.override.yml" ] ; then
+        compose="$compose:docker-compose.override.yml"
+      fi
+    fi
+    PS1_DM="$(__docker_machine_ps1 "\nDM: $(ansi $yellow)%s$(ansi) $(ansi $magenta)$compose$(ansi)\n")"
+    PS1="$PS1_DM$PS1"
+  }
+
   PS1_USER="${PS1_USER:-$(ansi $green)\u$(ansi)}"
   PS1_HOST="${PS1_HOST:-$(ansi $magenta)\H$(ansi)}"
   PS1_CWD="${PS1_CWD:-$(ansi $blue)\w$(ansi)}"
@@ -69,6 +82,7 @@ if [ -n "$PS1" ]  ; then
         export PS1="$SHORT_PS1"
       fi
     fi
+    prepend_docker_prompt
     IN_PROMPT_COMMAND=0
   }
 
