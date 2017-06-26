@@ -1,3 +1,0 @@
-ControlMaster auto
-ControlPath ~/.ssh/conn/%r@%h_%p
-ControlPersist 6h
