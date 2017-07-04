@@ -13,3 +13,4 @@ vendor/*
 .vimrc
 .agignore
 Session.vim
+.idea
