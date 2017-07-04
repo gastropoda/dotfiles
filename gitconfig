@@ -1,16 +1,20 @@
 # vim:ft=gitconfig
-[user]
-  name = Artem Baguinski
-  email = abaguinski@depraktijkindex.nl
+[include]
+	path = ~/.gitconfig_local
+
+# Put user specific settings in ~/.gitconfig_local, e.g.:
+#
+#  [user]
+#    name = Artem Baguinski
+#    email = abaguinski@depraktijkindex.nl
+#  [github]
+#    user = artm
+
 [apply]
   ignorewhitespace = change
   whitespace = nowarn
-
 [core]
   excludesfile = ~/.gitignore_global
-#  autocrlf = true
-#  safecrlf = false
-
 [color]
   branch = auto
   diff = auto
@@ -29,13 +33,10 @@
   added = yellow
   changed = green
   untracked = cyan
-
 [branch]
   autosetuprebase = always
 [push]
   default = current
-[github]
-  user = artm
 [format]
   pretty = oneline
 [log]
