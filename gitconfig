@@ -50,3 +50,6 @@
 	required = true
 [alias]
 	fmerge = merge --no-ff
+[user]
+	email = abaguinski@gmail.com
+	name = Artem Baguinski
